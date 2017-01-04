@@ -1,7 +1,7 @@
 // app/routes.js
 
 // grab the nerd model we just created
-var Nerd = require('./models/nerd');
+var Nerd = require('./models/alert');
 
 module.exports = function(app) {
     // server routes ===========================================================
@@ -9,16 +9,16 @@ module.exports = function(app) {
     // authentication routes
 
     // sample api route
-    app.get('/api/nerds', function(req, res) {
+    app.get('/api/alerts', function(req, res) {
         // use mongoose to get all nerds in the database
-        Nerd.find(function(err, nerds) {
+        Alert.find(function(err, alerts) {
 
             // if there is an error retrieving, send the error. 
                             // nothing after res.send(err) will execute
             if (err)
                 res.send(err);
 
-            res.json(nerds); // return all nerds in JSON format
+            res.json(alerts); // return all nerds in JSON format
         });
     });
 

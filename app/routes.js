@@ -1,7 +1,10 @@
 // app/routes.js
 
 // grab the nerd model we just created
-var Nerd = require('./models/alert');
+var Alert = require('./models/alert');
+var Secrets = require('./secrets/secrets.js')
+var Wunderground = require('wunderground-api');
+var WunderClient = new Wunderground(Secrets.wundergroundKey)
 
 module.exports = function(app) {
     // server routes ===========================================================

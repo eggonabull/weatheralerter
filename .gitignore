@@ -38,3 +38,6 @@ jspm_packages
 
 # Bower installs
 /public/libs
+
+# Secrets
+/app/secrets

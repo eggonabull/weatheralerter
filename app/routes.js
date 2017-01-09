@@ -7,14 +7,18 @@ var Wunderground = require('wundergroundnode');
 console.log(Secrets.wundergroundKey())
 var wunderground = new Wunderground(Secrets.wundergroundKey())
 
-wunderground.conditions().request('84111', function(err, response){
-    console.log(response);
-});
+
 
 module.exports = function(app) {
     // server routes ===========================================================
     // handle things like api calls
     // authentication routes
+    app.get('/api/weather/:zip', function(req, res) {
+        var zip = req.params.zip;
+        wunderground.conditions().request(zip, function(err, weatherResponse){
+            res.send(weatherResponse);
+        });
+    });
 
     // sample api route
     app.get('/api/alerts', function(req, res) {

@@ -41,3 +41,9 @@ jspm_packages
 
 # Secrets
 /app/secrets
+
+# typescript outputs
+*.component.js
+*.component.js.map
+/app/boot.js
+/app/boot.js.map

@@ -45,5 +45,7 @@ jspm_packages
 # typescript outputs
 *.component.js
 *.component.js.map
+*.service.js
+*.service.js.map
 /app/boot.js
 /app/boot.js.map

@@ -7,8 +7,12 @@ import {ConditionsComponent} from './conditions.component';
     template: `
     	<h1>Hello Angular</h1>
     	<alerts></alerts>
-    	<conditions></conditions>
+    	<conditions></conditions>,
     `,
-    directives: [AlertsComponent, ConditionsComponent]
+    directives: [
+    	AlertsComponent,
+    	ConditionsComponent,
+    	AutoGrowDirective
+    ]
 })
 export class AppComponent { }

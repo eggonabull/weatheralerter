@@ -49,3 +49,5 @@ jspm_packages
 *.service.js.map
 /app/boot.js
 /app/boot.js.map
+*.directive.js
+*.directive.js.map

@@ -1,6 +1,7 @@
 import {Component} from 'angular2/core';
 import {AlertsComponent} from './alerts.component';
 import {ConditionsComponent} from './conditions.component';
+import {ArtistryService} from './artistry.service';
 
 @Component({
     selector: 'my-app',

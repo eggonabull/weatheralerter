@@ -9,10 +9,12 @@ var wunderground = new Wunderground(Secrets.wundergroundKey())
 
 var AWS = require('aws-sdk');
 
-var s3 = new AWS.S3();
+//var s3 = new AWS.S3();
 
-
-var sns = new AWS.SNS();
+var sns = new AWS.SNS({
+    accessKeyId: Secrets.awsAccessKey()
+    secretAccessKey: Secrets.awsSecretAccessKey()
+});
 sns.addPermission(params, function (err, data) {
   if (err) console.log(err, err.stack); // an error occurred
   else     console.log(data);           // successful response
@@ -20,7 +22,7 @@ sns.addPermission(params, function (err, data) {
 
 
 var params = {
-  Message: 'STRING_VALUE', /* required */
+  Message: 'hello', /* required */
   MessageAttributes: {
     someKey: {
       DataType: 'STRING_VALUE', /* required */

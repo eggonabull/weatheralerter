@@ -1,6 +1,6 @@
 import {Directive} from 'angular2/core'
 import {Renderer} from 'angular2/core'
-import {ElementRef} form 'angular2/core'
+import {ElementRef} from 'angular2/core'
 
 @Directive({
 	selector: '[autoGrow]',

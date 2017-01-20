@@ -1,14 +1,20 @@
 import {Component} from 'angular2/core';
 import {AlertsComponent} from './alerts.component';
 import {ConditionsComponent} from './conditions.component';
-import {ArtistryService} from './artistry.service';
+import {AutoGrowDirective} from './auto-grow.directive';
+//import {ArtistryService} from './artistry.service';
 
 @Component({
     selector: 'my-app',
     template: `
     	<h1>Hello Angular</h1>
     	<alerts></alerts>
-    	<conditions></conditions>,
+    	<conditions></conditions>
+        <button
+            class="btn btn-primary"
+            [style.backgroundColor]="isActive ? 'blue' : 'red'"
+            (click)="onClick()"
+            on-mouseover="onHover()">Submit</button>
     `,
     directives: [
     	AlertsComponent,
@@ -16,4 +22,14 @@ import {ArtistryService} from './artistry.service';
     	AutoGrowDirective
     ]
 })
-export class AppComponent { }
+export class AppComponent {
+    isActive = false;
+
+    onClick() {
+        console.log("click");
+    }
+
+    onHover() {
+        console.log("onhover");
+    }
+}

@@ -1,6 +1,6 @@
 import {Component} from 'angular2/core'
 import {AlertService} from './alert.service'
-import {AutoGrowDirective} from './'
+import {AutoGrowDirective} from './auto-grow.directive'
 
 @Component({
 	selector: 'alerts',

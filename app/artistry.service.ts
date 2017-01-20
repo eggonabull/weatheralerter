@@ -1,5 +1,6 @@
 // We need this to build our post string
-var querystring = require('querystring');
+
+/*var querystring = require('querystring');
 var http = require('http');
 var fs = require('fs');
 
@@ -25,3 +26,4 @@ export class ArtistrySerice {
 
 	}
 }
+*/

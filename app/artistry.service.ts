@@ -1,12 +1,13 @@
 // We need this to build our post string
 
-/*var querystring = require('querystring');
-var http = require('http');
-var fs = require('fs');
+
+import querystring = require('querystring');
+import http = require('http');
+import fs = require('fs');
 
 var postOptions = {
-	host: 'commons.wikimedia.org'
-	port: 80
+	host: 'commons.wikimedia.org',
+	port: 80,
 	path: '/wiki/Category:Weather_in_art',
 	method: 'POST',
 	headers: {}
@@ -20,10 +21,9 @@ var post_req = http.request(post_options, function(res) {
 });
 
 export class ArtistrySerice {
-	var artistrySearch = "https://commons.wikimedia.org/wiki/Category:Weather_in_art#/media/File:Joseph_Mallord_William_Turner_096.jpg";
+	public artistrySearch = "https://commons.wikimedia.org/wiki/Category:Weather_in_art#/media/File:Joseph_Mallord_William_Turner_096.jpg";
 
 	getArtistry(): string[] {
-
+		return [this.artistrySearch]
 	}
 }
-*/

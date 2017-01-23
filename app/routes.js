@@ -22,7 +22,7 @@ sns.addPermission(params, function (err, data) {
 
 
 var params = {
-  Message: 'hello', /* required */
+  Message: 'We are notifying you because the conditions you specified have been met.', /* required */
   MessageAttributes: {
     someKey: {
       DataType: 'STRING_VALUE', /* required */
@@ -32,10 +32,8 @@ var params = {
     /* anotherKey: ... */
   },
   MessageStructure: 'STRING_VALUE',
-  PhoneNumber: 'STRING_VALUE',
-  Subject: 'STRING_VALUE',
-  TargetArn: 'STRING_VALUE',
-  TopicArn: 'STRING_VALUE'
+  Subject: 'Weatheralerter Notification',
+  TopicArn: 'Weathalert'
 };
 sns.publish(params, function(err, data) {
   if (err) console.log(err, err.stack); // an error occurred

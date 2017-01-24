@@ -11,10 +11,7 @@ import {ElementRef} from 'angular2/core'
 })
 export class AutoGrowDirective {
 
-	constructor(private el: ElementRef, private renderer: Renderer) {
-		this.el = el;
-		this.renderer = renderer;
-	}
+	constructor(private el: ElementRef, private renderer: Renderer) { }
 
 	onFocus() {
 		this.renderer.setElementStyle(this.el, 'width', '200');

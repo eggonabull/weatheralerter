@@ -65,7 +65,14 @@ module.exports = function(app) {
     });
 
     // route to handle creating goes here (app.post)
+    app.post('/api/alerts', function(req, res) {
+      var newAlert = new Alert({"type": "temperature"})
+      newAlert.save();
+    })
+
     // route to handle delete goes here (app.delete)
+
+
 
     // frontend routes =========================================================
     // route to handle all angular requests

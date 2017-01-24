@@ -2,7 +2,6 @@ import {Component} from 'angular2/core';
 import {AlertsComponent} from './alerts.component';
 import {ConditionsComponent} from './conditions.component';
 import {AutoGrowDirective} from './auto-grow.directive';
-//import {ArtistryService} from './artistry.service';
 
 @Component({
     selector: 'my-app',
@@ -18,8 +17,7 @@ import {AutoGrowDirective} from './auto-grow.directive';
     `,
     directives: [
     	AlertsComponent,
-    	ConditionsComponent,
-    	AutoGrowDirective
+    	ConditionsComponent
     ]
 })
 export class AppComponent {

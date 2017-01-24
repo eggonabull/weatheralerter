@@ -1,14 +1,21 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "declaration": false,
     "module": "system",
     "moduleResolution": "node",
     "sourceMap": true,
+    "mapRoot": "./",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "removeComments": false,
-    "noImplicitAny": false
+    "mapRoot": "./",
+    "noImplicitAny": false //,
+    //"lib": ["es2015", "dom"]
   },
+  "types": [
+    "core-js"
+  ],
   "exclude": [
     "node_modules",
     "typings/main",

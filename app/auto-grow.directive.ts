@@ -1,6 +1,4 @@
-import {Directive} from 'angular2/core'
-import {Renderer} from 'angular2/core'
-import {ElementRef} from 'angular2/core'
+import {Directive, ElementRef, Renderer} from 'angular2/core'
 
 @Directive({
 	selector: '[autoGrow]',
@@ -11,13 +9,16 @@ import {ElementRef} from 'angular2/core'
 })
 export class AutoGrowDirective {
 
-	constructor(private el: ElementRef, private renderer: Renderer) { }
+	constructor(private el: ElementRef, private renderer: Renderer) {
+
+	}
 
 	onFocus() {
-		this.renderer.setElementStyle(this.el, 'width', '200');
+		this.renderer.setElementStyle(this.el.nativeElement, 'width', '200');
 	}
 
 	onBlur() {
-		this.renderer.setElementStyle(this.el, 'width', '120');
+		this.renderer.setElementStyle(this.el.nativeElement, 'width', '120');
 	}
+
 }

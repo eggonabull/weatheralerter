@@ -32,7 +32,8 @@ import {StarComponent} from './star.component';
 
         <input type="text" [(ngModel)]="title" />
         <input type="text" bindon-ngModel="title" /><br />
-        <star></star>
+        <star
+            [is-favorite]="post.isFavorite"></star>
     `,
     directives: [
     	AlertsComponent,
@@ -43,6 +44,11 @@ import {StarComponent} from './star.component';
 export class AppComponent {
     isActive = false;
     title = "Angular App"
+
+    post = {
+        title: "Title",
+        isFavorite: true
+    }
 
     onDivClick() {
         console.log("handled by div");

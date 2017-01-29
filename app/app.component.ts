@@ -31,8 +31,8 @@ import {StarComponent} from './star.component';
             value="Clear" />
 
         <input type="text" [(ngModel)]="title" />
-        <input type="text" bindon-ngModel="title" />
-        <star />
+        <input type="text" bindon-ngModel="title" /><br />
+        <star></star>
     `,
     directives: [
     	AlertsComponent,

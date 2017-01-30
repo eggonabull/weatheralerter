@@ -3,6 +3,7 @@ import {AlertsComponent} from './alerts.component';
 import {ConditionsComponent} from './conditions.component';
 import {AutoGrowDirective} from './auto-grow.directive';
 import {StarComponent} from './star.component';
+import {HeartComponent} from './heart.component';
 
 @Component({
     selector: 'my-app',
@@ -32,8 +33,10 @@ import {StarComponent} from './star.component';
 
         <input type="text" [(ngModel)]="title" />
         <input type="text" bindon-ngModel="title" /><br />
+        <i class="glyphicon glyphicon-star"></i>
         <star
-            [is-favorite]="post.isFavorite"></star>
+            [is-favorite]="post.isFavorite"
+            (change)="onFavoriteChange($event)"></star>
     `,
     directives: [
     	AlertsComponent,
@@ -48,6 +51,10 @@ export class AppComponent {
     post = {
         title: "Title",
         isFavorite: true
+    }
+
+    onFavoriteChange($event) {
+        console.log($event);
     }
 
     onDivClick() {

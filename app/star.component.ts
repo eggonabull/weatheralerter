@@ -4,13 +4,12 @@ import {EventEmitter} from 'angular2/core'
 
 @Component({
 	selector: 'star',
-	template: `
-			<i 
-				class="glyphicon"
-				[(class.glyphicon-star)]="isFavorite"
-				[(class.glyphicon-star-empty)]="!isFavorite" 
-				(click)="onToggle()" >
-			</i>`
+	templateUrl: 'app/star.template.html',
+	styles: [`
+		.glyphicon-star {
+			color: orange;
+		}
+	`]
 })
 export class StarComponent {
 	@Input('is-favorite') isFavorite : boolean = true;
@@ -19,6 +18,7 @@ export class StarComponent {
 
 	onToggle() {
 		this.isFavorite = !this.isFavorite;
+		this.change.emit({ newValue: this.isFavorite });
 	}
 
 }

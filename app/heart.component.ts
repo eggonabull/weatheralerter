@@ -5,23 +5,33 @@ import {EventEmitter} from 'angular2/core'
 @Component({
 	selector: 'heart',
 	template: `
-		<i class="glyphicon-heart"></i>
-		<span class="count">{{click}}</span>
+		<i 
+			class="glyphicon glyphicon-heart"
+			[(class.liked)]="isLiked"
+			(click)="onToggle()">
+		</i>
+		<span class="count">{{likeCount}}</span>
 	`,
 	styles: [`
-		.glyphicon-star {
-			color: orange;
+		.glyphicon-heart {
+			cursor: pointer;
+			color: #ccc;
+		}
+		.glyphicon-heart.liked {
+			color: red;
 		}
 	`]
 })
-export class StarComponent {
-	@Input('is-heart') isFavorite : boolean = true;
+export class HeartComponent {
+	@Input('is-liked') isLiked : boolean = false;
+	@Input('like-count') likeCount : number = 0;
 
 	@Output() change = new EventEmitter();
 
 	onToggle() {
-		this.isFavorite = !this.isFavorite;
-		this.change.emit({ newValue: this.isFavorite });
+		this.isLiked = !this.isLiked;
+		this.likeCount = this.isLiked ? this.likeCount + 1 : this.likeCount - 1;
+		this.change.emit({ newValue: [this.isLiked, this.likeCount ] });
 	}
 
 }

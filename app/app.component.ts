@@ -37,11 +37,14 @@ import {HeartComponent} from './heart.component';
         <star
             [is-favorite]="post.isFavorite"
             (change)="onFavoriteChange($event)"></star>
+        <br /><br />
+        <heart like-count=10></heart>
     `,
     directives: [
     	AlertsComponent,
     	ConditionsComponent,
-        StarComponent
+        StarComponent,
+        HeartComponent
     ]
 })
 export class AppComponent {

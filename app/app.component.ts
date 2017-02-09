@@ -41,7 +41,8 @@ import {VoterComponent} from './voter.component';
         <br /><br />
         <heart like-count=10></heart>
         <br />
-        <voter></voter>
+        <voter></voter><br />
+        <tweets></tweets>
     `,
     directives: [
     	AlertsComponent,

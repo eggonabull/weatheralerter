@@ -1,6 +1,5 @@
 import {Component} from 'angular2/core'
 import {Input, Output} from 'angular2/core'
-import {EventEmitter} from 'angular2/core'
 
 @Component({
 	selector: 'heart',
@@ -18,7 +17,7 @@ import {EventEmitter} from 'angular2/core'
 			color: #ccc;
 		}
 		.glyphicon-heart.liked {
-			color: red;
+			color: deeppink;
 		}
 	`]
 })
@@ -26,12 +25,9 @@ export class HeartComponent {
 	@Input('is-liked') isLiked : boolean = false;
 	@Input('like-count') likeCount : number = 0;
 
-	@Output() change = new EventEmitter();
-
 	onToggle() {
 		this.isLiked = !this.isLiked;
-		this.likeCount = this.isLiked ? this.likeCount + 1 : this.likeCount - 1;
-		this.change.emit({ newValue: [this.isLiked, this.likeCount ] });
+		this.likeCount += this.isLiked ? 1 : -1;
 	}
 
 }

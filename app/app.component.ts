@@ -4,6 +4,7 @@ import {ConditionsComponent} from './conditions.component';
 import {AutoGrowDirective} from './auto-grow.directive';
 import {StarComponent} from './star.component';
 import {HeartComponent} from './heart.component';
+import {VoterComponent} from './voter.component';
 
 @Component({
     selector: 'my-app',
@@ -39,12 +40,15 @@ import {HeartComponent} from './heart.component';
             (change)="onFavoriteChange($event)"></star>
         <br /><br />
         <heart like-count=10></heart>
+        <br />
+        <voter></voter>
     `,
     directives: [
     	AlertsComponent,
     	ConditionsComponent,
         StarComponent,
-        HeartComponent
+        HeartComponent,
+        VoterComponent
     ]
 })
 export class AppComponent {
